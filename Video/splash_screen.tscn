@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://breytj7tgxdcv"]
+
+[ext_resource type="Script" path="res://Video/splash_screen.gd" id="1_evkr0"]
+[ext_resource type="VideoStream" path="res://Video/lv_0_20230727202625.ogv" id="2_8yde7"]
+
+[node name="SplashScreen" type="Node"]
+script = ExtResource("1_evkr0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+texture_filter = 2
+offset_left = 261.0
+offset_right = 1349.0
+offset_bottom = 1088.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("2_8yde7")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

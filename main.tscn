@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://bm7jgws6jlavy"]
+
+[ext_resource type="Script" path="res://Script/GameManager.gd" id="1_8bynm"]
+[ext_resource type="PackedScene" uid="uid://dknn4v0wdy62i" path="res://Character/supermom.tscn" id="1_gd0qw"]
+[ext_resource type="Texture2D" uid="uid://d1txj8svu1ucd" path="res://Assets/Assets_Master/Untitled69_20230725103243.png" id="2_jf5gy"]
+[ext_resource type="PackedScene" uid="uid://cn31r4bwa2bp7" path="res://Other/ground.tscn" id="3_lwi4k"]
+[ext_resource type="PackedScene" uid="uid://ctqo4pdawuwjk" path="res://Pipe/pipe_spawner.tscn" id="5_3sa72"]
+[ext_resource type="PackedScene" uid="uid://3sobudqgnlma" path="res://Other/fade.tscn" id="6_3u162"]
+[ext_resource type="PackedScene" uid="uid://c6iq73fcgye0j" path="res://Other/ui.tscn" id="7_l6xpx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrpqa"]
+size = Vector2(324, 46)
+
+[node name="main" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_8bynm")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.5)
+texture = ExtResource("2_jf5gy")
+
+[node name="PipeSpawner" parent="." instance=ExtResource("5_3sa72")]
+
+[node name="Ground" parent="." instance=ExtResource("3_lwi4k")]
+position = Vector2(0, 298)
+
+[node name="Supermom" parent="." instance=ExtResource("1_gd0qw")]
+position = Vector2(0, 63)
+
+[node name="Fade" parent="." instance=ExtResource("6_3u162")]
+
+[node name="UI" parent="." instance=ExtResource("7_l6xpx")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -400)
+shape = SubResource("RectangleShape2D_vrpqa")
+
+[node name="Camera2D" type="Camera2D" parent="."]

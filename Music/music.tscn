@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://sayulfhe0msg"]
+
+[ext_resource type="AudioStream" uid="uid://ifnv56oodpkc" path="res://Music/Jeremy-Blake-Powerup_-♫-NO-COPYRIGHT-8-bit-Music.ogg" id="1_vcvqi"]
+
+[node name="Music" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_vcvqi")
+volume_db = -5.0
+autoplay = true
