@@ -105,6 +105,7 @@ initial_velocity_min = 500.0
 initial_velocity_max = 1000.0
 angular_velocity_min = -720.0
 angular_velocity_max = -389.07
+linear_accel_min = -29.68
 scale_min = 0.5
 scale_max = 0.5
 
@@ -131,7 +132,6 @@ libraries = {
 stream = ExtResource("5_6yht0")
 
 [node name="Yeet" type="GPUParticles2D" parent="."]
-visible = false
 emitting = false
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_rwfqy")
